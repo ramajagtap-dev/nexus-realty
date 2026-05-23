@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase'; 
-import { collection, getDocs, deleteDoc, doc, query, where } from 'firebase/firestore'; // 'query' aur 'where' import kiya
+import { collection, getDocs, deleteDoc, doc, query, where } from 'firebase/firestore'; 
 
 import Navbar from '../components/Navbar';
 import FilterPanel from '../components/FilterPanel';
@@ -33,13 +33,12 @@ const Home = () => {
     }
   };
 
-  // Yahan humne Firebase ka query method use kiya hai (Best Practice)
   const fetchFilteredData = async () => {
     try {
-      console.log("Fetching from Firebase...");
+      console.log("Fetching data for type:", globalListingType);
       const propertiesRef = collection(db, "properties");
       
-      // Sirf 'listing_type' match karne wala data mang rahe hain
+      // Query 1: Filtered query
       const q = query(propertiesRef, where("listing_type", "==", globalListingType));
       const querySnapshot = await getDocs(q);
       
@@ -48,8 +47,15 @@ const Home = () => {
         ...doc.data(),
       }));
 
+      // Debugging: Agar data khali hai, toh check karein ki kya database mein kuch aur hai
+      if (data.length === 0) {
+        console.warn("No data found for filter. Fetching EVERYTHING to debug...");
+        const allDocs = await getDocs(propertiesRef);
+        console.log("Fetched Properties (Debug):", allDocs.docs.map(d => ({id: d.id, ...d.data()})));
+      }
+
       setProperties(data);
-      console.log("Data fetched:", data);
+      console.log("Data fetched successfully:", data);
       
     } catch (err) {
       console.error("Firebase fetch error:", err);
@@ -67,7 +73,6 @@ const Home = () => {
         onCategorySelect={(type) => setGlobalListingType(type)} 
       />
       
-      {/* ... Baki ka UI code waisa hi rahega ... */}
       <div className="relative h-[320px] bg-cover bg-center flex items-center justify-center border-b border-gray-900" 
            style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), #0B132B), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200')` }}>
         <h1 className="text-3xl md:text-4xl font-extrabold text-center text-white">
@@ -92,7 +97,7 @@ const Home = () => {
         </h2>
         
         {properties.length === 0 ? (
-          <p className="text-gray-500 text-sm">No properties found in database...</p>
+          <p className="text-gray-500 text-sm">No properties found. Check Console (F12) for Debug info.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {properties.map((item) => (
