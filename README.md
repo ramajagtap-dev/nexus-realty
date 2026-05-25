@@ -1,16 +1,120 @@
-# React + Vite
+# 🏠 Nexus Realty
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nexus Realty is a modern real estate web platform built using React.js, Vite, Tailwind CSS, and Firebase.  
+The platform is designed to simplify property browsing, listing, and management with a clean UI and smooth user experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+🌐 Live Website:  
+https://nexus-realty-git-main-ramajagtap-devs-projects.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔍 Browse real-time property listings
+- 🔐 Firebase Authentication (Login/Signup)
+- 📦 Firestore database integration
+- 🎨 Modern responsive UI with Tailwind CSS
+- ⚡ Fast performance using Vite
+- ✨ Smooth animations using Framer Motion
+- 🔔 Interactive notifications with React Toastify
+- 📱 Mobile-friendly design
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- React.js
+- Vite
+- Tailwind CSS
+
+### Backend / Database
+- Firebase Authentication
+- Firebase Firestore
+
+### Libraries & Tools
+- Framer Motion
+- Lucide React
+- React Toastify
+
+### Deployment
+- Vercel
+
+---
+
+## 📂 Project Structure
+
+```text
+nexus-realty/
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── vite.config.js
+│   └── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Local Setup
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/ramajagtap-dev/nexus-realty.git
+```
+
+### 2️⃣ Navigate to Frontend
+
+```bash
+cd nexus-realty/frontend
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 4️⃣ Start Development Server
+
+```bash
+npm run dev
+```
+
+### 5️⃣ Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+## 🌐 Deployment Configuration
+
+### Vercel Settings
+
+```text
+Root Directory: frontend
+Build Command: npm run build
+Output Directory: dist
+```
+
+---
+
+## 📸 Screenshots
+
+_Add your project screenshots here_
+
+---
+
+## 👨‍💻 Author
+
+### Rama Jagtap
+
+🔗 GitHub:  
+https://github.com/ramajagtap-dev
