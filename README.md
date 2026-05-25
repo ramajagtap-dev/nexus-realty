@@ -28,6 +28,7 @@ https://nexus-realty-git-main-ramajagtap-devs-projects.vercel.app/
 ## 🛠 Tech Stack
 
 ### Frontend
+- JavaScript
 - React.js
 - Vite
 - Tailwind CSS
