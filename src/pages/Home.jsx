@@ -39,8 +39,7 @@ const Home = () => {
       const propertiesRef = collection(db, "properties");
       
       // Query 1: Filtered query
-      const q = query(propertiesRef, where("listing_type", "==", globalListingType));
-      const querySnapshot = await getDocs(q);
+     const querySnapshot = await getDocs(propertiesRef);
       
       const data = querySnapshot.docs.map((doc) => ({
         id: doc.id,
