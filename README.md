@@ -109,7 +109,29 @@ Output Directory: dist
 
 ## 📸 Screenshots
 
-_Add your project screenshots here_
+## 📸 Screenshots
+
+### 🏠 Homepage
+
+![Homepage](./screenshots/home.png)
+
+---
+
+### 🏘 Property Listings
+
+![Properties](./screenshots/properties.png)
+
+---
+
+### 📄 Property Details
+
+![Details](./screenshots/details.png)
+
+---
+
+### 📱 Mobile Responsive View
+
+![Mobile](./screenshots/mobile.png)
 
 ---
 
